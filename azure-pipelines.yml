@@ -1,0 +1,17 @@
+trigger:
+  - main
+
+pool:
+  name: 'self-managed-ado-agent'
+
+steps:
+- task: AWSShellScript@1
+  displayName: 'Validate OIDC Connection'
+  inputs:
+    awsCredentials: 'aws-ado-sc-feb28'
+    regionName: 'us-east-1'
+    scriptType: 'inline'
+    inlineScript: |
+      echo "Testing AWS OIDC authentication..."
+      aws sts get-caller-identity
+      echo "OIDC connection successful!"
