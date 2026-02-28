@@ -1,0 +1,10 @@
+- task: AWSShellScript@1
+  displayName: "Debug: Show ADO OIDC claim shapes"
+  inputs:
+    awsCredentials: 'aws-ado-sc-feb28'
+    regionName: 'eu-west-2'
+    scriptType: 'inline'
+    inlineScript: |
+      echo "If OIDC is used, AWS Toolkit logs will include issuer/audience/subject info."
+      echo "Proceeding to call STS (this will fail if trust doesn't match):"
+      aws sts get-caller-identity || true
