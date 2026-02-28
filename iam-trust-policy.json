@@ -4,13 +4,13 @@
     {
       "Effect": "Allow",
       "Principal": {
-        "Federated": "arn:aws:iam::<AWS_ACCOUNT_ID>:oidc-provider/vstoken.dev.azure.com/<ORGANIZATION_ID>"
+        "Federated": "arn:aws:iam::539247450405:oidc-provider/vstoken.dev.azure.com/c1ec55c7-903b-6beb-9e6a-e3b044ab4bdd"
       },
       "Action": "sts:AssumeRoleWithWebIdentity",
       "Condition": {
         "StringEquals": {
-          "vstoken.dev.azure.com/<ORGANIZATION_ID>:aud": "sts.amazonaws.com",
-          "vstoken.dev.azure.com/<ORGANIZATION_ID>:sub": "sc://2286671-POC/AWS-ADO/*"
+          "vstoken.dev.azure.com/c1ec55c7-903b-6beb-9e6a-e3b044ab4bdd:aud": "sts.amazonaws.com",
+          "vstoken.dev.azure.com/c1ec55c7-903b-6beb-9e6a-e3b044ab4bdd:sub": "sc://2286671-POC/*"
         }
       }
     }
